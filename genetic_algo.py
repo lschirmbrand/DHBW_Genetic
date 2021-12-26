@@ -6,7 +6,7 @@ from helper.analyze import timer
 # Change these parameters to change the algorithm parameters
 AMOUNT_ITEMS = 30
 SIZE_POPULATION = 40
-GENERATION_LIMIT = 100
+GENERATION_LIMIT = 200
 WEIGHT_LIMIT = 300
 
 

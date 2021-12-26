@@ -12,7 +12,17 @@ PrinterFunc = Callable[[Population, int, FitnessFunc], None]
 
 
 def generateGenome(length: int) -> Genome:
-    return choices([0, 1], k=length)
+    genome = choices([0, 1], k=length)
+    index = 0
+    for i in genome:
+        if(i == 1):
+            break
+        else:
+            if(i == len(genome)):
+                genome[randrange(0,len(genome),1)] = randrange(0,1)
+            else:
+                index = index + 1
+    return genome
 
 
 def generatePopulation(size: int, genome_length: int) -> Population:
@@ -42,14 +52,6 @@ def populationFitness(population: Population, fitness_func: FitnessFunc) -> int:
     return sum([fitness_func(genome) for genome in population])
 
 
-# def selectionPair(population: Population, fitness_func: FitnessFunc) -> Population:
-#     weights = List[int]
-#     return choices(
-#         population=population,
-#         weights=[fitness_func(gene) for gene in population],
-#         k=2
-#     )
-
 def selectionPair(population: Population, fitnessFunc: FitnessFunc) -> Population:
     weights = []
     weightsGZ = False
@@ -61,7 +63,6 @@ def selectionPair(population: Population, fitnessFunc: FitnessFunc) -> Populatio
 
     if weightsGZ == False:
         return choices(population=population, k=2)
-        # raise RuntimeError("Useless poplation with no skills. Start again.")
     return choices(population=population, weights=weights, k=2)
 
 def sortPopulation(population: Population, fitnessFunc: FitnessFunc) -> Population:

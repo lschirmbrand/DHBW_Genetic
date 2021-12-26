@@ -39,8 +39,8 @@ moreItems = [
     Item('Item30', 68, 36),
     Item('Item31', 47, 53),
     Item('Item32', 123, 21),
-    Item('Item33', 48, 36),
-    Item('Item34', 41, 63),
+    # Item('Item33', 48, 36),
+    # Item('Item34', 41, 63),
     # Item('Item35', 173, 41),
     # Item('Item30', 68, 36),
     # Item('Item31', 57, 63),
@@ -48,6 +48,9 @@ moreItems = [
     # Item('Item33', 68, 42),
     # Item('Item34', 41, 63),
     # Item('Item35', 173, 41),
+    # Item('Item36', 147, 19),
+    # Item('Item37', 111, 11),
+    # Item('Item38', 68, 86),
 ] + items
 
 
